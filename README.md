@@ -1,7 +1,7 @@
 # OBJECTIVE
 An automated system to deliver drugs across several locations of the patients while also managing Healthcare Data.
 
-# BASIC IDEA 
+## BASIC IDEA 
 In the Healthcare data management system, Patient’s data will be classified according to their individual Healthcare providers and pharmacies. In addition, the medicine distribution system will extract the patients' medicine orders and will update the directories of various pharmacies for medicine delivery.
 
 ## FLOW
@@ -15,3 +15,15 @@ In the Healthcare data management system, Patient’s data will be classified ac
   medications.
 
 • A periodic structure will be provided for the medicines being prescribed to different patients
+
+## CONTRIBUTORS
+
+•	Somnath Solaskar (NUID# 002105558)
+
+•	Mayank Yadav (NUID# 002193976)
+
+•	Harsh Sharma (NUID# 002102615)
+
+•	Viraj Panchal (NUID# 001568792)
+
+
