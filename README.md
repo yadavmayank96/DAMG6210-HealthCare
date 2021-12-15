@@ -19,12 +19,12 @@
 
 ## Team Members
 
-  *	Somnath Solaskar (NUID# 002105558)
+  *	Somnath Solaskar (NUID 002105558)
 
-  *	Mayank Yadav     (NUID# 002193976)
+  *	Mayank Yadav     (NUID 002193976)
 
-  *	Harsh Sharma     (NUID# 002102615)
+  *	Harsh Sharma     (NUID 002102615)
 
-  *	Viraj Panchal    (NUID# 001568792)
+  *	Viraj Panchal    (NUID 001568792)
 
 
