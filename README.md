@@ -6,16 +6,16 @@
 
 ## Process Flow
 
-  • Patients will receive services from the Healthcare Providers (Hospitals, Clinics, Consultants etc).
+  * Patients will receive services from the Healthcare Providers (Hospitals, Clinics, Consultants etc).
 
-  • Orders will be generated based on prescriptions given by HCP’s.
+  * Orders will be generated based on prescriptions given by HCP’s.
 
-  • Patients will be grouped based on their insurance providers and geographic location.
+  * Patients will be grouped based on their insurance providers and geographic location.
 
-  • Orders data will be separated into categories based on the pharmacies that will be distributing the
+  * Orders data will be separated into categories based on the pharmacies that will be distributing the
   medications.
 
-  • A periodic structure will be provided for the medicines being prescribed to different patients
+  * A periodic structure will be provided for the medicines being prescribed to different patients
 
 ## Team Members
 
