@@ -1,3 +1,9 @@
+# HealthCare Data Management and Medicine Distribution
+         A database design for Healthcare data management and medicine distribution.
+         
+## How to run?
+   * Run DDL commands ---> Execute DML commands  ---> Execute Triggers  ----> Execute Procedures  ----> Views ( Reports )
+
 ## Problem Statement
    An automated system to deliver drugs across several locations of the patients while also managing Healthcare Data.
 
