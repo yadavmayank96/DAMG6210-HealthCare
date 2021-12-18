@@ -1,0 +1,89 @@
+create or replace PROCEDURE ins_medicines (
+	
+	in_medicine_name IN VARCHAR2,
+	in_manufacturer IN VARCHAR2,
+	in_strength IN VARCHAR2,
+	in_type IN VARCHAR2
+) AS
+	var_med_cnt NUMBER;
+	unique_med_id EXCEPTION;
+	med_name_invalid EXCEPTION;
+	manufacturer_invalid EXCEPTION;
+	strength_invalid EXCEPTION;
+	type_invalid EXCEPTION;
+BEGIN
+	SELECT COUNT(*) INTO var_med_cnt FROM medicines WHERE UPPER(TRIM(medicine_name)) = UPPER(TRIM(in_medicine_name))
+	AND UPPER(TRIM(manufacturer)) = UPPER(TRIM(in_manufacturer)) AND UPPER(TRIM(strength)) = UPPER(TRIM(in_strength))
+	AND UPPER(TRIM(type)) = UPPER(TRIM(in_type));
+	IF 
+		(var_med_cnt > 0)
+	THEN
+		RAISE unique_med_id;
+	ELSEIF
+		in_medicine_name IS NULL or in_medicine_name IS NOT NULL
+		AND VALIDATE_CONVERSION(in_medicine_name as NUMBER) = 1
+	THEN
+		RAISE med_name_invalid;
+	ELSEIF
+		in_manufacturer IS NULL or in_manufacturer IS NOT NULL
+		AND VALIDATE_CONVERSION(in_manufacturer as NUMBER) = 1
+	THEN
+		RAISE manufacturer_invalid;
+	ELSEIF
+		in_strength IS NULL AND UPPER(TRIM(in_type)) <> 'KIT'
+	THEN
+		RAISE strength_invalid;
+	ELSEIF
+		in_type IS NULL or in_type IS NOT NULL
+		AND VALIDATE_CONVERSION(in_type as NUMBER) = 1
+	THEN
+		RAISE type_invalid;
+	ELSE
+		INSERT INTO medicines (
+			medicine_id,
+			medicine_name,
+			manufacturer,
+			strength,
+			type,
+			created_date,
+			updated_date,
+			is_deleted,
+			delete_date,
+			flag
+		) VALUES (
+			sequence_primary_id.NEXTVAL,
+			in_medicine_name,
+			in_manufacturer,
+			in_strength,
+			in_type,
+			sysdate,
+			sysdate,
+			NULL,
+			NULL,
+			'INS'
+		)
+	END IF;
+	
+	EXCEPTION
+		WHEN unique_med_id THEN
+		raise_application_error(, 'Medicine already exists in database.');
+		
+		WHEN med_name_invalid THEN
+		raise_application_error(, 'Medicine name null or invalid.');
+		
+		WHEN manufacturer_invalid THEN
+		raise_application_error(, 'Manufacturer name null or invalid');
+
+		WHEN strength_invalid THEN
+		raise_application_error(, 'Strength invalid.');
+
+		WHEN type_invalid THEN
+		raise_application_error(, 'Type invalid.');
+		COMMIT;
+
+END;
+
+
+	
+
+
